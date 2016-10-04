@@ -1,0 +1,19 @@
+<div class="pull-right">
+	<a href="#!/create" class="btn btn-default" ng-show="hasRole('ROLE_ADMIN')" title="Create"><span class="fa fa-plus"></span></a>
+</div>
+<div class="page-header">
+	<h3>Blog Posts</h3>
+</div>
+
+<div ng-repeat="newMeasurementEntry in blogPosts">
+	<hr />
+	<div class="pull-right">
+		<a href="" ng-click="deletePost(newMeasurementEntry)" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')"
+		   title="delete"><span class="fa fa-trash-o"></span></a>
+		<a href="#!/edit/{{newMeasurementEntry.id}}" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')"
+		   title="edit"><span class="fa fa-pencil"></span></a>
+	</div>
+	<h4>{{newMeasurementEntry.date | date}}</h4>
+	<p>{{newMeasurementEntry.content}}</p>
+</div>
+<hr />
