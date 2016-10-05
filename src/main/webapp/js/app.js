@@ -217,6 +217,6 @@ services.factory('BlogPostService', function ($resource) {
 
 services.factory('NewMeasurementService', function($resource) {
 
-	return $resource('rest/news/:id', {id: '@id'});
+	return $resource('rest/new/:id', {id: '@id'});
 });
 
