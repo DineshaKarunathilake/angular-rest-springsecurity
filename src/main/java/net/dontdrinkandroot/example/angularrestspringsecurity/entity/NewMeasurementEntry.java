@@ -26,6 +26,12 @@ public class NewMeasurementEntry implements Entity
     @Column
     private String content;
 
+    @Column
+    private String customer;
+
+    @Column
+    private String size;
+
     public NewMeasurementEntry()
     {
         this.date = new Date();
@@ -57,6 +63,28 @@ public class NewMeasurementEntry implements Entity
     public void setContent(String content)
     {
         this.content = content;
+    }
+
+    @JsonView(JsonViews.User.class)
+    public String getCustomer()
+    {
+        return this.customer;
+    }
+
+    public void setCustomer(String customer)
+    {
+        this.customer = customer;
+    }
+
+    @JsonView(JsonViews.User.class)
+    public String getSize()
+    {
+        return this.size;
+    }
+
+    public void setSize(String size)
+    {
+        this.size = size;
     }
 
     @Override

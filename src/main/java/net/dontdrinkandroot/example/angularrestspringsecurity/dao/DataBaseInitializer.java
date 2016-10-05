@@ -47,10 +47,12 @@ public class DataBaseInitializer
         this.userDao.save(adminUser);
 
         long timestamp = System.currentTimeMillis() - (1000 * 60 * 60 * 24);
+
         for (int i = 0; i < 10; i++) {
             NewMeasurementEntry newMeasurementEntry = new NewMeasurementEntry();
             newMeasurementEntry.setContent("This is example content " + i);
             newMeasurementEntry.setDate(new Date(timestamp));
+            newMeasurementEntry.setCustomer("numjj");
             this.newMeasurementEntryDao.save(newMeasurementEntry);
             timestamp += 1000 * 60 * 60;
         }
