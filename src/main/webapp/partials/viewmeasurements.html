@@ -11,9 +11,9 @@
         <a href="" ng-click="deleteEntry(newMeasurementEntry)" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')" title="delete"><span class="fa fa-trash-o"></span></a>
         <a href="#!/newmeasurement/{{newMeasurementEntry.id}}" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')" title="edit"><span class="fa fa-pencil"></span></a>
     </div>
-    <p>{{newMeasurementEntry.customer}}</p>
     <p>{{newMeasurementEntry.date | date}}</p>
+    <p>{{newMeasurementEntry.customer}} {{newMeasurementEntry.content}} {{newMeasurementEntry.batchno}} {{newMeasurementEntry.size}} {{newMeasurementEntry.gmt1_ChestWidth}}</p>
     <p>{{newMeasurementEntry.content}}</p>
-    <p>{{newMeasurementEntry.size}}</p>
+    <!--<p>{{newMeasurementEntry.batchno}}</p>-->
 </div>
 <hr />

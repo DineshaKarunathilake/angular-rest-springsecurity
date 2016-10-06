@@ -53,7 +53,15 @@ public class DataBaseInitializer
             newMeasurementEntry.setContent("This is example content " + i);
             newMeasurementEntry.setDate(new Date(timestamp));
             newMeasurementEntry.setCustomer("numjj");
+            newMeasurementEntry.setStyle("eee");
+            newMeasurementEntry.setBatchno("sdf");
+            newMeasurementEntry.setSize("dd");
+            newMeasurementEntry.setGmt1_ChestWidth(3);
+            newMeasurementEntry.setGmt1_HemWidth(4);
+            newMeasurementEntry.setGmt1_CBLength(5);
+            newMeasurementEntry.setGmt1_CFLength(54);
             this.newMeasurementEntryDao.save(newMeasurementEntry);
+
             timestamp += 1000 * 60 * 60;
         }
     }

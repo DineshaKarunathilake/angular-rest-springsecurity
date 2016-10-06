@@ -30,7 +30,28 @@ public class NewMeasurementEntry implements Entity
     private String customer;
 
     @Column
+    private String batchno;
+
+    @Column
+    private String style;
+
+    @Column
     private String size;
+
+    @Column
+    private float gmt1_ChestWidth;
+
+    @Column
+    private float gmt1_HemWidth;
+
+    @Column
+    private float gmt1_CBLength;
+
+    @Column
+    private float gmt1_CFLength;
+
+
+
 
     public NewMeasurementEntry()
     {
@@ -77,6 +98,28 @@ public class NewMeasurementEntry implements Entity
     }
 
     @JsonView(JsonViews.User.class)
+    public String getBatchno()
+    {
+        return this.batchno;
+    }
+
+    public void setBatchno(String batchno)
+    {
+        this.batchno = batchno;
+    }
+
+    @JsonView(JsonViews.User.class)
+    public String getStyle()
+    {
+        return this.style;
+    }
+
+    public void setStyle(String style)
+    {
+        this.style = style;
+    }
+
+    @JsonView(JsonViews.User.class)
     public String getSize()
     {
         return this.size;
@@ -87,9 +130,53 @@ public class NewMeasurementEntry implements Entity
         this.size = size;
     }
 
+    @JsonView(JsonViews.User.class)
+    public float getGmt1_ChestWidth()
+    {
+        return this.gmt1_ChestWidth;
+    }
+
+    public void setGmt1_ChestWidth(float gmt1_ChestWidth)
+    {
+        this.gmt1_ChestWidth = gmt1_ChestWidth;
+    }
+
+    @JsonView(JsonViews.User.class)
+    public float getGmt1_HemWidth()
+    {
+        return this.gmt1_HemWidth;
+    }
+
+    public void setGmt1_HemWidth(float gmt1_HemWidth)
+    {
+        this.gmt1_HemWidth = gmt1_HemWidth;
+    }
+
+    @JsonView(JsonViews.User.class)
+    public float getGmt1_CBLength()
+    {
+        return this.gmt1_CBLength;
+    }
+
+    public void setGmt1_CBLength(float gmt1_CBLength)
+    {
+        this.gmt1_CBLength = gmt1_CBLength;
+    }
+
+    @JsonView(JsonViews.User.class)
+    public float getGmt1_CFLength()
+    {
+        return this.gmt1_CFLength;
+    }
+
+    public void setGmt1_CFLength(float gmt1_CFLength)
+    {
+        this.gmt1_CFLength = gmt1_CFLength;
+    }
+
     @Override
     public String toString()
     {
-        return String.format("NewMeasurementEntry[%d, %s]", this.id, this.content);
+        return String.format("NewMeasurementEntry[%d, %s, %s, %s, %s]", this.id, this.customer, this.style, this.batchno, this.size);
     }
 }

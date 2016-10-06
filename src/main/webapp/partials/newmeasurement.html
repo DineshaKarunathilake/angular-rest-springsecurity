@@ -8,32 +8,115 @@
     <!--<div class="col-sm-9">-->
     <!--<input id="size" ng-model="size" type="text" class="form-control" />-->
     <!--</div>-->
-    <label class="control-label col-sm-2" for="content">Customer</label>
+    <label class="control-label col-sm-2" for="customer">Customer</label>
     <div class="col-sm-10">
         <input ng-model="newMeasurementEntry.customer" id="customer" class="form-control" />
     </div>
-    <label class="control-label col-sm-2" for="content">Content</label>
+    <label class="control-label col-sm-2" for="customer">Style</label>
     <div class="col-sm-10">
-        <textarea ng-model="newMeasurementEntry.content" id="content" class="form-control" rows="10">{{newMeasurementEntry.content}}</textarea>
+        <input ng-model="newMeasurementEntry.style" id="style" class="form-control" />
     </div>
-    <label class="control-label col-sm-2" for="content">Size</label>
+    <label class="control-label col-sm-2" for="customer">Batch No:</label>
     <div class="col-sm-10">
-    <select ng-model="newMeasurementEntry.size" id="size" class="form-control">
-        <option value="XXS">XXS</option>
-        <option value="XS">XS</option>
-        <option value="S">S</option>
-        <option value="M">M</option>
-        <option value="L">L</option>
-        <option value="XL">XL</option>
-        <option value="XXL">XXL</option>
-    </select>
+        <input ng-model="newMeasurementEntry.batchno" id="batchno" class="form-control" />
+    </div>
+    <label class="control-label col-sm-2" for="size">Size</label>
+    <div class="col-sm-10">
+        <select ng-model="newMeasurementEntry.size" id="size" class="form-control">
+            <option value="XXS">XXS</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+        </select>
+    </div>
+    </div>
+
+<div class="form-group">
+    <label class="control-label col-sm-2" for="customer">Garment1</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.gmt1_ChestWidth" id="gmt1_ChestWidth" placeholder="ChestWidth"/>
+        <input ng-model="newMeasurementEntry.gmt1_HemWidth" id="gmt1_HemWidth" placeholder="HemWidth"/>
+        <input ng-model="newMeasurementEntry.gmt1_CBLength" id="gmt1_CBLength" placeholder="CBLength"/>
+        <input ng-model="newMeasurementEntry.gmt1_CFLength" id="gmt1_CFLength" placeholder="CFLength"/>
+    </div>
+
+    <label class="control-label col-sm-2" for="customer">Garment2</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.gmt2_ChestWidth" id="gmt2_ChestWidth"/>
+        <input ng-model="newMeasurementEntry.gmt2_HemWidth" id="gmt2_HemWidth"/>
+        <input ng-model="newMeasurementEntry.gmt2_CBLength" id="gmt2_CBLength"/>
+        <input ng-model="newMeasurementEntry.gmt2_CFLength" id="gmt2_CFLength"/>
+    </div>
+
+    <label class="control-label col-sm-2" for="customer">Garment3</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.gmt3_ChestWidth" id="gmt3_ChestWidth"/>
+        <input ng-model="newMeasurementEntry.gmt3_HemWidth" id="gmt3_HemWidth"/>
+        <input ng-model="newMeasurementEntry.gmt3_CBLength" id="gmt3_CBLength"/>
+        <input ng-model="newMeasurementEntry.gmt3_CFLength" id="gmt3_CFLength"/>
+    </div>
+
+    <label class="control-label col-sm-2" for="customer">Garment4</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.gmt4_ChestWidth" id="gmt4_ChestWidth"/>
+        <input ng-model="newMeasurementEntry.gmt4_HemWidth" id="gmt4_HemWidth"/>
+        <input ng-model="newMeasurementEntry.gmt4_CBLength" id="gmt4_CBLength"/>
+        <input ng-model="newMeasurementEntry.gmt4_CFLength" id="gmt4_CFLength"/>
+    </div>
+
+    <label class="control-label col-sm-2" for="customer">Garment5</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.gmt5_ChestWidth" id="gmt5_ChestWidth"/>
+        <input ng-model="newMeasurementEntry.gmt5_HemWidth" id="gmt5_HemWidth"/>
+        <input ng-model="newMeasurementEntry.gmt5_CBLength" id="gmt5_CBLength"/>
+        <input ng-model="newMeasurementEntry.gmt5_CFLength" id="gmt5_CFLength"/>
+    </div>
     </div>
 
 
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="customer">Sleeve1</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.slv1_SlvOpening" id="slv1_SlvOpening"/>
+        <input ng-model="newMeasurementEntry.slv1_SlvLength" id="slv1_SlvLength"/>
+        <input ng-model="newMeasurementEntry.slv1_SlvWidth" id="slv1_SlvWidth"/>
+    </div>
 
+    <label class="control-label col-sm-2" for="customer">Sleeve2</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.slv2_SlvOpening" id="slv2_SlvOpening"/>
+        <input ng-model="newMeasurementEntry.slv2_SlvLength" id="slv2_SlvLength"/>
+        <input ng-model="newMeasurementEntry.slv2_SlvWidth" id="slv2_SlvWidth"/>
+    </div>
+
+    <label class="control-label col-sm-2" for="customer">Sleeve3</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.slv3_SlvOpening" id="slv3_SlvOpening"/>
+        <input ng-model="newMeasurementEntry.slv3_SlvLength" id="slv3_SlvLength"/>
+        <input ng-model="newMeasurementEntry.slv3_SlvWidth" id="slv3_SlvWidth"/>
+    </div>
+
+    <label class="control-label col-sm-2" for="customer">Sleeve4</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.slv4_SlvOpening" id="slv4_SlvOpening"/>
+        <input ng-model="newMeasurementEntry.slv4_SlvLength" id="slv4_SlvLength"/>
+        <input ng-model="newMeasurementEntry.slv4_SlvWidth" id="slv4_SlvWidth"/>
+    </div>
+
+    <label class="control-label col-sm-2" for="customer">Sleeve5</label>
+    <div class="col-sm-10">
+        <input ng-model="newMeasurementEntry.slv5_SlvOpening" id="slv5_SlvOpening"/>
+        <input ng-model="newMeasurementEntry.slv5_SlvLength" id="slv5_SlvLength"/>
+        <input ng-model="newMeasurementEntry.slv5_SlvWidth" id="slv5_SlvWidth"/>
+    </div>
 </div>
+
 <div class="form-group">
     <div class="col-sm-10 col-sm-offset-2">
         <button type="submit" class="btn btn-primary" ng-click="save()"><span class="fa fa-check"></span> Save</button>
     </div>
 </div>
+</form>
