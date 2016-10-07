@@ -1,0 +1,82 @@
+<div>
+    <form editable-form name="tableform" onaftersave="saveTable()" oncancel="cancel()">
+
+        <!-- table -->
+        <table class="table table-bordered table-hover table-condensed">
+            <tr style="font-weight: bold">
+                <td style="width:20%">Garment No:</td>
+                <td style="width:20%">Chest Width</td>
+                <td style="width:20%">Hem Width</td>
+                <td style="width:20%">CF Length</td>
+                <td style="width:20%">CB Length</td>
+                <!--<td style="width:30%"><span ng-show="tableform.$visible">Action</span></td>-->
+            </tr>
+            <tr ng-repeat="entry in entries | filter:filterEntry">
+                <td>
+                    <!-- editable Garment no: (float with validation) -->
+                    <span text="entry.gmt" ng-model="entry.gmt"  e-form="tableform" >
+                    {{ entry.gmt }}
+                    </span>
+                </td>
+
+                <td>
+                    <!--run a check for validity-->
+                    <!-- editable username (select-local) -->
+                    <span editable-float="entry.chestWidth" ng-model="entry.chestWidth" e-form="tableform" >
+                    <input name="entry.chestWidth">
+                    <!--{{ entry.chestWidth || 'empty' }}-->
+                    </span>
+                </td>
+
+                <td>
+                <!-- editable username (text with validation) -->
+                    <span editable-float="entry.hemWidth" ng-model="entry.hemWidth" e-form="tableform" >
+                    <input name="entry.hemWidth">
+                    </span>
+                </td>
+
+                <td>
+                    <!-- editable username (text with validation) -->
+                    <span editable-float="entry.cbLength" ng-model="entry.cbLength" e-form="tableform" >
+                    <input name="entry.cbLength">
+                    </span>
+                </td>
+
+                <td>
+                    <!-- editable username (text with validation) -->
+                    <span editable-float="entry.cfLength" ng-model="entry.cfLength" e-form="tableform" >
+                    <input name="entry.cfLength">
+                    </span>
+                </td>
+
+                <!--<td>-->
+                    <!--&lt;!&ndash; editable status (select-local) &ndash;&gt;-->
+                    <!--<span editable-select="entry.status" e-form="tableform" e-ng-options="s.value as s.text for s in statuses">-->
+                    <!--{{ showStatus(user) }}-->
+                    <!--</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--&lt;!&ndash; editable group (select-remote) &ndash;&gt;-->
+                    <!--<span editable-select="entry.group" e-form="tableform" onshow="loadGroups()" e-ng-options="g.id as g.text for g in groups">-->
+                    <!--{{ showGroup(user) }}-->
+                    <!--</span>-->
+                <!--</td>-->
+                <!--<td><button type="button" ng-show="tableform.$visible" ng-click="deleteUser(user.id)" class="btn btn-danger pull-right">Del</button></td>-->
+            </tr>
+        </table>
+
+        <!-- buttons -->
+        <!--<div class="btn-edit">-->
+            <!--<button type="button" class="btn btn-default" ng-show="!tableform.$visible" ng-click="tableform.$show()">-->
+                <!--edit-->
+            <!--</button>-->
+        <!--</div>-->
+        <!--<div class="btn-form" ng-show="tableform.$visible">-->
+        <div class="btn-form">
+            <!--<button type="button" ng-disabled="tableform.$waiting" ng-click="addUser()" class="btn btn-default pull-right">add row</button>-->
+            <button type="submit" ng-disabled="tableform.$waiting" class="btn btn-primary">save</button>
+            <!--<button type="button" ng-disabled="tableform.$waiting" ng-click="tableform.$cancel()" class="btn btn-default">cancel</button>-->
+        </div>
+
+    </form>
+</div>
