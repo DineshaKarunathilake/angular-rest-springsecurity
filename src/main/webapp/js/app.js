@@ -22,17 +22,17 @@ angular.module('exampleApp', ['ngRoute', 'ngCookies', 'exampleApp.services','xed
 
 			});
 			
-
-//			$routeProvider.otherwise(
-//            			{
-//                            templateUrl: 'partials/viewmeasurements.html',
-//                        	controller: ViewMeasurementsController
-//                        });
-            $routeProvider.when('/add', {
-                            templateUrl: 'partials/add.html',
+            $routeProvider.when('/addBody', {
+                            templateUrl: 'partials/addBody.html',
                             controller: EditableTableCtrl
 
                         });
+
+            $routeProvider.when('/addSleeve', {
+                             templateUrl: 'partials/addSleeve.html',
+                             controller: AddSleeveCtrl
+
+                                    });
 
 			$routeProvider.otherwise(
             			{
@@ -247,29 +247,29 @@ function EditableTableCtrl($scope, $filter, $http, $q){
 //  ];
 
 
-  $scope.groups = [];
-  $scope.loadGroups = function() {
-    return $scope.groups.length ? null : $http.get('/groups').success(function(data) {
-      $scope.groups = data;
-    });
-  };
-
-  $scope.showGroup = function(entry) {
-    if(entry.group && $scope.groups.length) {
-      var selected = $filter('filter')($scope.groups, {id: entry.group});
-      return selected.length ? selected[0].text : 'Not set';
-    } else {
-      return entry.groupName || 'Not set';
-    }
-  };
-
-  $scope.showStatus = function(entry) {
-    var selected = [];
-    if(entry.status) {
-      selected = $filter('filter')($scope.statuses, {value: entry.status});
-    }
-    return selected.length ? selected[0].text : 'Not set';
-  };
+//  $scope.groups = [];
+//  $scope.loadGroups = function() {
+//    return $scope.groups.length ? null : $http.get('/groups').success(function(data) {
+//      $scope.groups = data;
+//    });
+//  };
+//
+//  $scope.showGroup = function(entry) {
+//    if(entry.group && $scope.groups.length) {
+//      var selected = $filter('filter')($scope.groups, {id: entry.group});
+//      return selected.length ? selected[0].text : 'Not set';
+//    } else {
+//      return entry.groupName || 'Not set';
+//    }
+//  };
+//
+//  $scope.showStatus = function(entry) {
+//    var selected = [];
+//    if(entry.status) {
+//      selected = $filter('filter')($scope.statuses, {value: entry.status});
+//    }
+//    return selected.length ? selected[0].text : 'Not set';
+//  };
 
 //  $scope.checkName = function(data, id) {
 //    if (id === 2 && data !== 'awesome') {
@@ -278,45 +278,77 @@ function EditableTableCtrl($scope, $filter, $http, $q){
 //  };
 
   // filter users to show
-  $scope.filterEntry = function(entry) {
-    return entry.isDeleted !== true;
-  };
-
-  // mark user as deleted
-  $scope.deleteEntry = function(id) {
-    var filtered = $filter('filter')($scope.entry, {id: id});
-    if (filtered.length) {
-      filtered[0].isDeleted = true;
-    }
-  };
-
-  // add user
-  $scope.addEntry = function() {
-    $scope.entries.push({
-      id: $scope.entries.length+1,
-      measurement: '',
-      status: null,
-      group: null,
-      isNew: true
-    });
-  };
+//  $scope.filterEntry = function(entry) {
+//    return entry.isDeleted !== true;
+//  };
+//
+//  // mark user as deleted
+//  $scope.deleteEntry = function(id) {
+//    var filtered = $filter('filter')($scope.entry, {id: id});
+//    if (filtered.length) {
+//      filtered[0].isDeleted = true;
+//    }
+//  };
+//
+//  // add user
+//  $scope.addEntry = function() {
+//    $scope.entries.push({
+//      id: $scope.entries.length+1,
+//      measurement: '',
+//      status: null,
+//      group: null,
+//      isNew: true
+//    });
+//  };
 
   // cancel all changes
-  $scope.cancel = function() {
-    for (var i = $scope.entries.length; i--;) {
-      var user = $scope.entries[i];
-      // undelete
-      if (entry.isDeleted) {
-        delete entry.isDeleted;
-      }
-      // remove new
-      if (entry.isNew) {
-        $scope.entries.splice(i, 1);
-      }
-    };
-  };
+//  $scope.cancel = function() {
+//    for (var i = $scope.entries.length; i--;) {
+//      var user = $scope.entries[i];
+//      // undelete
+//      if (entry.isDeleted) {
+//        delete entry.isDeleted;
+//      }
+//      // remove new
+//      if (entry.isNew) {
+//        $scope.entries.splice(i, 1);
+//      }
+//    };
+//  };
 
   // save edits
+  $scope.saveTable = function() {
+    var results = [];
+    for (var i = $scope.entries.length; i--;) {
+      var user = $scope.entries[i];
+      // actually delete user
+      if (entry.isDeleted) {
+        $scope.entries.splice(i, 1);
+      }
+      // mark as not new
+      if (entry.isNew) {
+        entry.isNew = false;
+      }
+
+      // send on server
+      results.push($http.post('/saveEntry', entry));
+    }
+
+    return $q.all(results);
+  };
+}
+
+
+function AddSleeveCtrl($scope, $filter, $http, $q){
+ $scope.entries = [
+    {id: 1, gmt: 'Sleeve1'},
+    {id: 2, gmt: 'Sleeve2'},
+    {id: 3, gmt: 'Sleeve3'},
+    {id: 4, gmt: 'Sleeve4'},
+    {id: 5, gmt: 'Sleeve5'}
+  ];
+
+    // save edits
   $scope.saveTable = function() {
     var results = [];
     for (var i = $scope.entries.length; i--;) {

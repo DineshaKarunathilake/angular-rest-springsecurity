@@ -3,14 +3,14 @@
 </div>
 
 
-<div >
+
     <!--<label for="size" class="col-sm-3 control-label">Size:</label>-->
     <!--<div class="col-sm-9">-->
     <!--<input id="size" ng-model="size" type="text" class="form-control" />-->
     <!--</div>-->
     <label class="control-label col-sm-2" for="customer">Customer</label>
     <div class="col-sm-10">
-        <input ng-model="newMeasurementEntry.customer" id="customer" class="form-control" />
+        <input ng-model="newMeasurementEntry.customer" id="customer" class="form-control" /> {{newMeasurementEntry.customer}}
     </div>
     <label class="control-label col-sm-2" for="customer">Style</label>
     <div class="col-sm-10">
@@ -20,27 +20,9 @@
     <div class="col-sm-10">
         <input ng-model="newMeasurementEntry.batchno" id="batchno" class="form-control" />
     </div>
-    <label class="control-label col-sm-2" for="size">Size</label>
-    <div class="col-sm-10">
-        <select ng-model="newMeasurementEntry.size" id="size" class="form-control">
-            <option value="XXS">XXS</option>
-            <option value="XS">XS</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
-        </select>
-    </div>
-    </div>
 
-<!--<div class="form-group">-->
-<!--<div class="col-sm-10 col-sm-offset-2">-->
-<!--<button  class="btn btn-primary" ng-click="next()" ng-model="nextButton"><span class="fa fa-check"></span> Next</button>-->
-<!--</div>-->
-<!--</div>-->
 
-<table class="table table-bordered table-hover table-condensed">
+    <table class="table table-bordered table-hover table-condensed">
 
     <tr style="font-weight: bold">
         <td style="width:10%">Size</td>
@@ -57,12 +39,12 @@
         </td>
         <td>
             <span>
-            <a href="#!/add" class="btn btn-default" ng-show="hasRole('ROLE_ADMIN')" title={{$scope.customer}}><span class="fa fa-plus"></span></a>
+            <a href="#!/addBody" class="btn btn-default" ng-show="hasRole('ROLE_ADMIN')" title={{newMeasurementEntry.customer}} ><span class="fa fa-plus"></span></a>
             </span>
         </td>
         <td>
             <span>
-            <a href="#!/add" class="btn btn-default" ng-show="hasRole('ROLE_ADMIN')" title={{$scope.customer}}><span class="fa fa-plus"></span></a>
+            <a href="#!/addSleeve" class="btn btn-default" ng-show="hasRole('ROLE_ADMIN')" title="uhj"><span class="fa fa-plus"></span></a>
             </span>
         </td>
     </tr>

@@ -1,0 +1,54 @@
+<div class="page-header">
+    <h3>Add Sleeve Measurements</h3>
+</div>
+<div>
+    <form editable-form name="tableform" onaftersave="saveTable()" oncancel="cancel()">
+
+        <!-- table -->
+        <table class="table table-bordered table-hover table-condensed">
+            <tr style="font-weight: bold">
+                <td style="width:20%">Sleeve No:</td>
+                <td style="width:20%">Sleeve Opening</td>
+                <td style="width:20%">Sleeve Width</td>
+                <td style="width:20%">Sleeve Length</td>
+            </tr>
+            <tr ng-repeat="entry in entries | filter:filterEntry">
+                <td>
+                    <!-- editable Garment no: (float with validation) -->
+                    <span text="entry.gmt" ng-model="entry.gmt"  e-form="tableform" >
+                    {{ entry.gmt }}
+                    </span>
+                </td>
+
+                <td>
+                    <!--run a check for validity-->
+                    <!-- editable username (select-local) -->
+                    <span editable-float="entry.sleeveOpening" ng-model="entry.sleeveOpening" e-form="tableform" >
+                    <input name="entry.sleeveOpening">
+                        <!--{{ entry.chestWidth || 'empty' }}-->
+                    </span>
+                </td>
+
+                <td>
+                    <!-- editable username (text with validation) -->
+                    <span editable-float="entry.sleeveWidth" ng-model="entry.sleeveWidth" e-form="tableform" >
+                    <input name="entry.sleeveWidth">
+                    </span>
+                </td>
+
+                <td>
+                    <!-- editable username (text with validation) -->
+                    <span editable-float="entry.sleeveLength" ng-model="entry.sleeveLength" e-form="tableform" >
+                    <input name="entry.sleeveLength">
+                    </span>
+                </td>
+            </tr>
+        </table>
+
+
+        <div class="btn-form">
+            <button type="submit" ng-disabled="tableform.$waiting" class="btn btn-primary">save</button>
+        </div>
+
+    </form>
+</div>
