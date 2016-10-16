@@ -222,7 +222,7 @@ function LoginController($scope, $rootScope, $location, $cookieStore, UserServic
 
 function EditableTableCtrl($scope, $filter, $http, $q){
  $scope.entries = [
-    {id: 1, gmt: 'Garment1'},
+    {id: 1, gmt: 'Garment1',chestWidth: 0, hemWidth:0,cbLength:0,cfLength:0},
     {id: 2, gmt: 'Garment2'},
     {id: 3, gmt: 'Garment3'},
     {id: 4, gmt: 'Garment4'},
@@ -319,22 +319,24 @@ function EditableTableCtrl($scope, $filter, $http, $q){
   // save edits
   $scope.saveTable = function() {
     var results = [];
-    for (var i = $scope.entries.length; i--;) {
-      var user = $scope.entries[i];
-      // actually delete user
-      if (entry.isDeleted) {
-        $scope.entries.splice(i, 1);
-      }
-      // mark as not new
-      if (entry.isNew) {
-        entry.isNew = false;
-      }
+    console.log($scope.entries);
 
-      // send on server
-      results.push($http.post('/saveEntry', entry));
-    }
-
-    return $q.all(results);
+//    for (var i = $scope.entries.length; i--;) {
+//      var user = $scope.entries[i];
+//      // actually delete user
+//      if (entry.isDeleted) {
+//        $scope.entries.splice(i, 1);
+//      }
+//      // mark as not new
+//      if (entry.isNew) {
+//        entry.isNew = false;
+//      }
+//
+//      // send on server
+//      results.push($http.post('/saveEntry', entry));
+//    }
+//
+//    return $q.all(results);
   };
 }
 
@@ -384,11 +386,6 @@ services.factory('UserService', function($resource) {
 				}
 			}
 		);
-});
-
-services.factory('BlogPostService', function ($resource) {
-
-	return $resource('rest/blogposts/:id', {id: '@id'});
 });
 
 services.factory('NewMeasurementService', function($resource) {

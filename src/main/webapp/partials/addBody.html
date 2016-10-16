@@ -5,13 +5,13 @@
     <form editable-form name="tableform" onaftersave="saveTable()" oncancel="cancel()">
 
         <!-- table -->
-        <table class="table table-bordered table-hover table-condensed">
+        <table class="table table-bordered table-hover table-condensed" >
             <tr style="font-weight: bold">
                 <td style="width:20%">Garment No:</td>
                 <td style="width:20%">Chest Width</td>
                 <td style="width:20%">Hem Width</td>
-                <td style="width:20%">CF Length</td>
                 <td style="width:20%">CB Length</td>
+                <td style="width:20%">CF Length</td>
                 <!--<td style="width:30%"><span ng-show="tableform.$visible">Action</span></td>-->
             </tr>
             <tr ng-repeat="entry in entries | filter:filterEntry">
@@ -25,30 +25,30 @@
                 <td>
                     <!--run a check for validity-->
                     <!-- editable username (select-local) -->
-                    <span editable-float="entry.chestWidth" ng-model="entry.chestWidth" e-form="tableform" >
-                    <input name="entry.chestWidth">
+                    <span editable-float="entry.chestWidth"  e-form="tableform" >
+                    <input name="entry.chestWidth" ng-model="entry.chestWidth">
                     <!--{{ entry.chestWidth || 'empty' }}-->
                     </span>
                 </td>
 
                 <td>
                 <!-- editable username (text with validation) -->
-                    <span editable-float="entry.hemWidth" ng-model="entry.hemWidth" e-form="tableform" >
-                    <input name="entry.hemWidth">
+                    <span editable-float="entry.hemWidth"  e-form="tableform" >
+                    <input name="entry.hemWidth" ng-model="entry.hemWidth">
                     </span>
                 </td>
 
                 <td>
                     <!-- editable username (text with validation) -->
-                    <span editable-float="entry.cbLength" ng-model="entry.cbLength" e-form="tableform" >
-                    <input name="entry.cbLength">
+                    <span editable-float="entry.cbLength"  e-form="tableform" >
+                    <input name="entry.cbLength" ng-model="entry.cbLength">
                     </span>
                 </td>
 
                 <td>
                     <!-- editable username (text with validation) -->
-                    <span editable-float="entry.cfLength" ng-model="entry.cfLength" e-form="tableform" >
-                    <input name="entry.cfLength">
+                    <span editable-float="entry.cfLength" e-form="tableform" >
+                    <input name="entry.cfLength" ng-model="entry.cfLength">
                     </span>
                 </td>
 

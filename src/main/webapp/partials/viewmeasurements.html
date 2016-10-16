@@ -5,15 +5,118 @@
     <h3>Measurements</h3>
 </div>
 
-<div ng-repeat="newMeasurementEntry in newMeasurementEntries">
+<div >
 
-    <div class="pull-right">
-        <a href="" ng-click="deleteEntry(newMeasurementEntry)" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')" title="delete"><span class="fa fa-trash-o"></span></a>
-        <a href="#!/newmeasurement/{{newMeasurementEntry.id}}" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')" title="edit"><span class="fa fa-pencil"></span></a>
-    </div>
+    <!--<div class="pull-right">-->
+        <!--<a href="" ng-click="deleteEntry(newMeasurementEntry)" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')" title="delete"><span class="fa fa-trash-o"></span></a>-->
+        <!--<a href="#!/newmeasurement/{{newMeasurementEntry.id}}" class="btn btn-xs btn-default" ng-show="hasRole('ROLE_ADMIN')" title="edit"><span class="fa fa-pencil"></span></a>-->
+    <!--</div>-->
     <p>{{newMeasurementEntry.date | date}}</p>
     <p>{{newMeasurementEntry.customer}} {{newMeasurementEntry.content}} {{newMeasurementEntry.batchno}} {{newMeasurementEntry.size}} {{newMeasurementEntry.gmt1_ChestWidth}}</p>
     <p>{{newMeasurementEntry.content}}</p>
+
+    <table class="table table-bordered table-hover table-condensed">
+        <tr style="font-weight: bold">
+            <td>Size</td>
+            <td>Measurement</td>
+            <td>
+            <table class="table table-hover table-condensed" frame="void" rules="all">
+                <tr>
+                    <th colspan="5">Before Presetting</th>
+                </tr>
+
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </table>
+            </td>
+            <td>
+                <table class="table table-hover table-condensed" frame="void" rules="all">
+                    <tr>
+                        <th colspan="5">After Presetting</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr ng-repeat="">
+            <td></td>
+            <td></td>
+            <td>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table class="table table-hover table-condensed" frame="void" rules="all">
+                    <tr>
+                        <th colspan="5">After Presetting</th>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+    </table>
+
+
+    <!--<table class="table table-bordered table-hover table-condensed" >-->
+
+        <!--<tr style="font-weight: bold">-->
+            <!--<td style="width:20%">Size</td>-->
+            <!--<td style="width:20%">Measurement</td>-->
+            <!--<td style="width:20%">Before Presetting-->
+                <!--<table >-->
+                    <!--<tr>-->
+                        <!--<td class="bordered">-->
+                            <!--a-->
+                        <!--</td>-->
+                        <!--<td class="bordered">-->
+                            <!--b-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+            <!--</td>-->
+            <!--&lt;!&ndash;<td style="width:30%"><span ng-show="tableform.$visible">Action</span></td>&ndash;&gt;-->
+        <!--</tr>-->
+
+        <!--<tr ng-repeat="newMeasurementEntry in newMeasurementEntries | filter:filterEntry">-->
+            <!--<td>-->
+                <!--&lt;!&ndash; editable Garment no: (float with validation) &ndash;&gt;-->
+                <!--<span text="entry.gmt" ng-model="entry.gmt"  e-form="tableform" >-->
+                    <!--{{ entry.gmt }}-->
+                    <!--</span>-->
+            <!--</td>-->
+
+        <!--</tr>-->
+    <!--</table>-->
+
+
+
     <!--<p>{{newMeasurementEntry.batchno}}</p>-->
 </div>
 <hr />

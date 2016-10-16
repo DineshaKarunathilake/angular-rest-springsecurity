@@ -50,6 +50,15 @@ public class NewMeasurementEntry implements Entity
     @Column
     private float gmt1_CFLength;
 
+    @Column
+    private float gmt1_SleeveLength;
+
+    @Column
+    private float gmt1_SleeveWidth;
+
+    @Column
+    private float gmt1_SleeveOpening;
+
 
 
 
@@ -173,6 +182,43 @@ public class NewMeasurementEntry implements Entity
     {
         this.gmt1_CFLength = gmt1_CFLength;
     }
+
+    @JsonView(JsonViews.User.class)
+    public float getGmt1_SleeveLength()
+    {
+        return this.gmt1_SleeveLength;
+    }
+
+    public void setGmt1_SleeveLength(float gmt1_SleeveLength)
+    {
+        this.gmt1_SleeveLength = gmt1_SleeveLength;
+    }
+
+    @JsonView(JsonViews.User.class)
+    public float getGmt1_SleeveWidth()
+    {
+        return this.gmt1_SleeveWidth;
+    }
+
+    public void setGmt1_SleeveWidth(float gmt1_SleeveWidth)
+    {
+        this.gmt1_SleeveWidth = gmt1_SleeveWidth;
+    }
+
+    @JsonView(JsonViews.User.class)
+    public float getGmt1_SleeveOpening()
+    {
+        return this.gmt1_SleeveOpening;
+    }
+
+    public void setGmt1_SleeveOpening(float gmt1_SleeveOpening)
+    {
+        this.gmt1_SleeveOpening = gmt1_SleeveOpening;
+    }
+
+
+
+
 
     @Override
     public String toString()
